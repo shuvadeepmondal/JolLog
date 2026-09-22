@@ -1,76 +1,54 @@
-# React + TypeScript + Vite
+<p align="center">
+  <img src="public/icons/icon-512.png" alt="Jollog" width="120" />
+</p>
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+<h1 align="center">JolLog</h1>
 
-Currently, two official plugins are available:
+<p align="center">
+  <strong>Simple water delivery and payment tracker</strong><br/>
+  Track. Pay. Done.
+</p>
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+<p align="center">
+  <a href="https://jolog.vercel.app">Live Demo</a>
+</p>
 
-## React Compiler
+A Progressive Web App (PWA) for tracking water bottle deliveries and payments to distributors.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Features
 
-## Expanding the ESLint configuration
+- **Multi-account support** — Track multiple water distributors
+- **Delivery tracking** — Log bottle deliveries with quantities and rates
+- **Payment tracking** — Record payments against accounts
+- **Due calculation** — Automatic balance due calculation
+- **Offline support** — Works without internet (PWA)
+- **Responsive design** — Works on mobile and desktop
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+<!-- ## Getting Started
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+```bash
+# Install dependencies
+pnpm install
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+# Start dev server
+pnpm dev
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+# Build for production
+pnpm build
 
-```
+# Preview production build
+pnpm preview
+``` -->
 
-You can also install [eslint-plugin-react-x](https://npmx.dev/package/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://npmx.dev/package/eslint-plugin-react-dom) for React-specific lint rules:
+## Install as PWA on Mobile
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+**Android (Chrome):**
+1. Open `https://jolog.vercel.app` in Chrome
+2. Tap the **Install** prompt that appears, or go to **Menu → Install app**
+3. Confirm and the app will be added to your home screen
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-
-```
-# JolLog
+**iOS (Safari):**
+1. Open `https://jolog.vercel.app` in Safari
+2. Tap the **Share** button (square with arrow)
+3. Scroll and tap **Add to Home Screen**
+4. Tap **Add** to confirm
