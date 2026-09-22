@@ -10,7 +10,7 @@
 </p>
 
 <p align="center">
-  <a href="https://jolog.vercel.app">Live Demo</a>
+  <a href="https://jollog.vercel.app">Live Demo</a>
 </p>
 
 A Progressive Web App (PWA) for tracking water bottle deliveries and payments to distributors.
@@ -43,12 +43,12 @@ pnpm preview
 ## Install as PWA on Mobile
 
 **Android (Chrome):**
-1. Open `https://jolog.vercel.app` in Chrome
+1. Open `https://jollog.vercel.app` in Chrome
 2. Tap the **Install** prompt that appears, or go to **Menu → Install app**
 3. Confirm and the app will be added to your home screen
 
 **iOS (Safari):**
-1. Open `https://jolog.vercel.app` in Safari
+1. Open `https://jollog.vercel.app` in Safari
 2. Tap the **Share** button (square with arrow)
 3. Scroll and tap **Add to Home Screen**
 4. Tap **Add** to confirm
