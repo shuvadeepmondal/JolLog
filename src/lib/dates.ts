@@ -24,3 +24,7 @@ export function getGreeting(): string {
 export function getFormattedToday(): string {
   return new Date().toLocaleDateString('en-IN', { day: 'numeric', month: 'long', year: 'numeric' })
 }
+
+export function formatTime(timestamp: number): string {
+  return new Date(timestamp).toLocaleTimeString('en-IN', { hour: '2-digit', minute: '2-digit', hour12: true })
+}

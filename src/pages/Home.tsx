@@ -17,6 +17,12 @@ export function Home({ onOpenAccount }: HomeProps) {
   const { accounts, loading, refresh } = useAccounts()
   const [summaries, setSummaries] = useState<Record<number, AccountSummary>>({})
   const [showAdd, setShowAdd] = useState(false)
+  const [time, setTime] = useState(new Date())
+
+  useEffect(() => {
+    const interval = setInterval(() => setTime(new Date()), 1000)
+    return () => clearInterval(interval)
+  }, [])
 
   useEffect(() => {
     async function loadSummaries() {
@@ -55,7 +61,13 @@ export function Home({ onOpenAccount }: HomeProps) {
           />
           <div>
             <h1 className="text-xl sm:text-2xl font-bold text-text-primary leading-tight tracking-tight">{getGreeting()}</h1>
-            <p className="text-[13px] sm:text-sm text-text-muted mt-0.5">{getFormattedToday()}</p>
+            <p className="text-[13px] sm:text-sm text-text-muted mt-0.5">
+              {getFormattedToday()}
+              <span className="mx-1.5">·</span>
+              <span className="font-mono">
+                {time.toLocaleTimeString('en-IN', { hour: '2-digit', minute: '2-digit', second: '2-digit', hour12: true })}
+              </span>
+            </p>
           </div>
         </div>
         <button

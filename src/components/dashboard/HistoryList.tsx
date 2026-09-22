@@ -3,7 +3,7 @@ import { Droplet, CreditCard } from 'lucide-react'
 import type { Delivery, Payment } from '../../db/database'
 import type { HistoryFilter } from '../../types'
 import { buildHistory, formatCurrency } from '../../lib/calculations'
-import { formatDisplayDate } from '../../lib/dates'
+import { formatDisplayDate, formatTime } from '../../lib/dates'
 
 interface HistoryListProps {
   deliveries: Delivery[]
@@ -55,7 +55,11 @@ export function HistoryList({ deliveries, payments }: HistoryListProps) {
                 }
               </div>
               <div className="flex-1 min-w-0">
-                <p className="text-[11px] text-text-muted">{formatDisplayDate(item.date)}</p>
+                <p className="text-[11px] text-text-muted">
+                  {formatDisplayDate(item.date)}
+                  <span className="mx-1">·</span>
+                  <span className="font-mono">{formatTime(item.createdAt)}</span>
+                </p>
                 <p className="text-[13px] font-medium text-text-primary mt-0.5">
                   {item.type === 'delivery' ? 'Bottle Addition' : 'Payment'}
                 </p>

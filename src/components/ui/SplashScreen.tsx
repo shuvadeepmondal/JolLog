@@ -20,6 +20,7 @@ export function SplashScreen({ onDone }: { onDone: () => void }) {
       />
       <h1 className="text-3xl font-semibold tracking-tight text-text-primary">Jollog</h1>
       <p className="text-sm text-text-muted mt-1.5 tracking-wide">Track. Pay. Done.</p>
+      <p className="text-sm text-text-muted">Powered by <span className="font-medium text-text-secondary">SDM</span></p>
     </div>
   )
 }
