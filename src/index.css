@@ -1,0 +1,107 @@
+@import "tailwindcss";
+
+@theme {
+  --color-primary-50: #eff6ff;
+  --color-primary-100: #dbeafe;
+  --color-primary-200: #bfdbfe;
+  --color-primary-400: #60a5fa;
+  --color-primary-500: #3b82f6;
+  --color-primary-600: #2563eb;
+  --color-primary-700: #1d4ed8;
+
+  --color-surface: #f8fafc;
+  --color-surface-card: #ffffff;
+  --color-surface-hover: #f1f5f9;
+  --color-border: #e2e8f0;
+  --color-border-light: #f1f5f9;
+
+  --color-text-primary: #0f172a;
+  --color-text-secondary: #475569;
+  --color-text-muted: #94a3b8;
+
+  --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
+}
+
+@layer base {
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  html {
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  body {
+    background: var(--color-surface);
+    color: var(--color-text-primary);
+    min-height: 100dvh;
+  }
+
+  #root {
+    min-height: 100dvh;
+    background: var(--color-surface);
+    position: relative;
+    display: flex;
+    flex-direction: column;
+  }
+
+  button {
+    font-family: inherit;
+    cursor: pointer;
+    border: none;
+    outline: none;
+    background: none;
+  }
+
+  button:focus-visible {
+    outline: 2px solid var(--color-primary-500);
+    outline-offset: 2px;
+    border-radius: 4px;
+  }
+
+  input {
+    font-family: inherit;
+    outline: none;
+  }
+
+  input:focus-visible {
+    outline: 2px solid var(--color-primary-500);
+    outline-offset: -2px;
+    border-radius: 6px;
+  }
+}
+
+@layer components {
+  .field-input {
+    width: 100%;
+    padding: 0.625rem 0.75rem;
+    border: 1px solid var(--color-border);
+    border-radius: 0.5rem;
+    font-size: 0.875rem;
+    color: var(--color-text-primary);
+    background: white;
+    transition: border-color 0.15s;
+  }
+  .field-input:focus {
+    border-color: var(--color-primary-400);
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+  }
+  .field-input::placeholder {
+    color: var(--color-text-muted);
+  }
+}
+
+@keyframes slide-up {
+  from { transform: translateY(100%); }
+  to { transform: translateY(0); }
+}
+
+.animate-slide-up {
+  animation: slide-up 0.25s ease-out;
+}
